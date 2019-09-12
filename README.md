@@ -1,1 +1,1 @@
-apcs_RockPaperScissorsLizardSpock_maven
+apcs_RPSLS_maven

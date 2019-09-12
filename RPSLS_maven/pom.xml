@@ -5,10 +5,10 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.mistlogic</groupId>
-  <artifactId>RockPaperScissorsLizardSpock</artifactId>
+  <artifactId>RPSLS_maven</artifactId>
   <version>1.0-SNAPSHOT</version>
 
-  <name>RockPaperScissorsLizardSpock</name>
+  <name>RPSLS_maven</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
