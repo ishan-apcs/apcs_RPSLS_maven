@@ -1,59 +1,83 @@
 package com.mistlogic;
 
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 
 /**
- * Hello world!
+ * @author ishanmadan
  *
  */
 public class App 
 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         // TODO code application logic here
         Scanner input = new Scanner(System.in);
         
-        boolean keepGoing = true;
-        String keepGoingAnswer;
-        
         System.out.println("Hi there! Welcome to Rock, Paper, Scissors...Lizard, Spock!");
         
-        while (keepGoing) {
-            System.out.println("Rock...\nPaper...\nScissors...\nLizard...\nSpock...\nShoot!");
+        while (true) {
+            // wait
+            TimeUnit.SECONDS.sleep(1);
+            System.out.println("Rock...");
+            // wait
+            TimeUnit.SECONDS.sleep(1);
+            System.out.println("Paper...");
+            // wait
+            TimeUnit.SECONDS.sleep(1);
+            System.out.println("Scissors...");
+            // wait
+            TimeUnit.SECONDS.sleep(1);
+            System.out.println("Lizard...");
+            // wait
+            TimeUnit.SECONDS.sleep(1);
+            System.out.println("Spock...");
+            // wait
+            TimeUnit.SECONDS.sleep(1);
+            System.out.println("Shoot! (Reply with your choice, or exit to exit)");
             String userChoice = input.nextLine();
             userChoice = userChoice.toLowerCase();
-            userChoice = userChoice.replaceAll("[^rockpapesilzd]", "");
-            while (!(userChoice.equals("rock") || userChoice.equals("paper") || userChoice.equals("scissors") || userChoice.equals("lizard") || userChoice.equals("spock"))) {
-                System.out.println("I'm sorry, but that wasn't a recognized choice. Try again?\nRock...\nPaper...\nScissors...\nLizard...\nSpock...\nShoot!");
+            userChoice = userChoice.replaceAll("[^rockpapesilzdxt]", "");
+            
+            if (userChoice.equals("exit")) {
+                System.out.println("Bye!");
+                System.exit(0);
+            }
+
+            while (!(userChoice.equals("rock") || userChoice.equals("paper") || userChoice.equals("scissors") || userChoice.equals("lizard") || userChoice.equals("spock") || userChoice.equals("exit"))) {
+                System.out.println("I'm sorry, but that wasn't a recognized choice. Try again?\nRock...");
+                // wait
+                TimeUnit.SECONDS.sleep(1);
+                System.out.println("Paper...");
+                // wait
+                TimeUnit.SECONDS.sleep(1);
+                System.out.println("Scissors...");
+                // wait
+                TimeUnit.SECONDS.sleep(1);
+                System.out.println("Lizard...");
+                // wait
+                TimeUnit.SECONDS.sleep(1);
+                System.out.println("Spock...");
+                // wait
+                TimeUnit.SECONDS.sleep(1);
+                System.out.println("Shoot! (Reply with your choice, or exit to exit)");
                 userChoice = input.nextLine();
                 userChoice = userChoice.toLowerCase();
-                userChoice = userChoice.replaceAll("[^rockpapersilzd]", "");
+                userChoice = userChoice.replaceAll("[^rockpapersilzdxt]", "");
+            }
+
+            if (userChoice.equals("exit")) {
+                System.out.println("Bye!");
+                System.exit(0);
             }
 
             String computerChoice = computerChoice();
             System.out.println("I choose " + computerChoice + ".");
             String victory = victoryCheck(computerChoice, userChoice);
             System.out.println(victory);
-            
-            System.out.println("Do you want to play again? Please answer yes or no.");
-            keepGoingAnswer = input.nextLine();
-            keepGoingAnswer = keepGoingAnswer.toLowerCase();
-            keepGoingAnswer = keepGoingAnswer.replaceAll("[^yesno]", "");
-            
-            while (!(keepGoingAnswer.equals("yes") || keepGoingAnswer.equals("no"))) {
-                System.out.println("I'm sorry, that's neither yes nor no. Do you want to play again? Please answer yes or no.");
-                keepGoingAnswer = input.nextLine();
-                keepGoingAnswer = keepGoingAnswer.toLowerCase();
-                keepGoingAnswer = keepGoingAnswer.replaceAll("[^yesno]", "");
-            }
-            
-            if (keepGoingAnswer.equals("yes")) {
-                keepGoing = true;
-            } else if (keepGoingAnswer.equals("no")) {
-                keepGoing = false;
-            } else {
-                exit();
-            }
-            
+
+            // wait
+            TimeUnit.SECONDS.sleep(1);
+            System.out.println("\nLet's play again!");
         }
     }
     
